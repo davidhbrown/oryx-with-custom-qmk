@@ -49,14 +49,20 @@ bool led_update_user(led_t led_state) {
     if (red) {
         ergodox_right_led_1_on();
         ergodox_right_led_1_set(red);
+    } else {
+      ergodox_right_led_1_off();
     }
     if (green) {
         ergodox_right_led_2_on();
         ergodox_right_led_2_set(green);
+    }else {
+      ergodox_right_led_2_off();
     }
     if (blue) {
         ergodox_right_led_3_on();
         ergodox_right_led_3_set(blue);
+    }else {
+      ergodox_right_led_3_off();
     }
     return true;
 };
