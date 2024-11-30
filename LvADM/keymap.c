@@ -38,8 +38,8 @@ bool led_update_user(led_t led_state) {
     if (led_state.LED_INDICATOR_STATE_GREEN && layer == LED_INDICATOR_GREEN_LAYER) green = LED_INDICATOR_GREEN_FULL;
 
     if (layer == LED_INDICATOR_BLUE_LAYER) blue = LED_INDICATOR_BLUE_HALF;
-    if (led_state.LED_INDICATOR_STATE.BLUE) blue = LED_INDICATOR_BLUE_DIM;
-    if (led_state.LED_INDICATOR_STATE.BLUE && layer == LED_INDICATOR_BLUE_LAYER) blue = LED_INDICATOR_BLUE_FULL;
+    if (led_state.LED_INDICATOR_STATE_BLUE) blue = LED_INDICATOR_BLUE_DIM;
+    if (led_state.LED_INDICATOR_STATE_BLUE && layer == LED_INDICATOR_BLUE_LAYER) blue = LED_INDICATOR_BLUE_FULL;
 
     if (red | green | blue) {
         ergodox_board_led_on();
