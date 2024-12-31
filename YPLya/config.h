@@ -3,6 +3,8 @@
   See config.h options at https://docs.qmk.fm/#/config_options?id=the-configh-file
 */
 
+#define MOONLANDER_USER_LEDS
+
 #undef DEBOUNCE
 #define DEBOUNCE 5
 
