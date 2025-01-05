@@ -2,6 +2,49 @@
 #include "version.h"
 #include "i18n.h"
 
+
+// DHB:
+layer_state_t layer_state_set_kb(layer_state_t state) {
+    state = layer_state_set_user(state);
+    return state;
+}
+bool led_update_user(led_t led_state) {
+
+    if(led_state.caps_lock) {
+      STATUS_LED_1(true);
+      STATUS_LED_4(true);
+    } else {
+      STATUS_LED_1(false);
+      STATUS_LED_4(false);
+    }
+
+    if(led_state.num_lock) {
+      STATUS_LED_2(true);
+      STATUS_LED_5(true);
+    } else {
+      STATUS_LED_2(false);
+      STATUS_LED_5(false);
+    }
+
+    if(led_state.scroll_lock) {
+      STATUS_LED_3(true);
+      STATUS_LED_6(true);
+    } else {
+      STATUS_LED_3(false);
+      STATUS_LED_6(false);
+    }
+
+    return true;
+};
+
+bool led_update_kb(led_t led_state) {
+    bool res = led_update_user(led_state);
+    if(res) {
+        ; // nothing more to do
+    }
+    return res;
+}
+
 enum custom_keycodes {
   RGB_SLD = EZ_SAFE_RANGE,
 };
